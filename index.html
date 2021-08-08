@@ -27,7 +27,7 @@
 // .hover() マウスが乗った、外れた時のタイミングを取ります。
 // .stop() アニメーションを止めます。引数次第で止め方が変わります。ググりましょう。
 
-$(function() {
+$(function(){
 
   var $tooltip = $("<div class='tooltip' style='display: none;'>description</div>"),
       $body = $('.tooltip-body');
@@ -55,26 +55,3 @@ $(function() {
 </body>
 </html>
 
-
-
-$(function(){
-  var b=$(".tooltip-body"),
-      a=$("<div class='tooltip' style='display: none;'>description</div>");
-
-  b.append(a);
-  b.hover(
-    function(){
-      a.stop(true,false);
-      a.fadeIn()
-    },
-    function(){
-      a.stop(true,false);
-      a.fadeOut()
-    });
-
-  b.on("mousemove",function(d){
-    var c=d.pageX,
-        f=d.pageY;
-    a.css({left:c,top:f})
-  })
-});
